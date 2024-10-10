@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
     private val items = mutableListOf<String>()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -52,12 +50,18 @@ class MainActivity : AppCompatActivity() {
         var result: Double
         var patrimoine: Double = initialAmount
 
+        var resultWithoutRate: Double
+        var patrimoineWithoutRate: Double = initialAmount
+
         for (i in age.toInt()..age.toInt()+45) {
             result = (patrimoine + 12*savePerMonth)*rate
             patrimoine = result
 
+            resultWithoutRate = (patrimoineWithoutRate + 12*savePerMonth)*1
+            patrimoineWithoutRate = resultWithoutRate
 
-            addItem("$i ans , $patrimoine")
+
+            addItem("$i ans , ${patrimoine.toInt()}, $patrimoineWithoutRate")
         }
     }
 
