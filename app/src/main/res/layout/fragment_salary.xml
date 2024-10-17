@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Salary">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/TextSalaireMensuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="Salaire Mensuel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mensuelBrut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/TextSalaireMensuel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mensuel brut" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/mensuelNet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mensuelBrut">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mensuel net" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textSalaireAnnuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="Salaire Annuel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mensuelNet" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/annuelBrut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textSalaireAnnuel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Annuel brut" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/annuelNet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/annuelBrut">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Annuel net" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/clearInputButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:text="Clear All"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/annuelNet" />
+
+        <Switch
+            android:id="@+id/cadreSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="24dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="Cadre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/annuelNet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
